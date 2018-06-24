@@ -52,7 +52,7 @@ public class DotGraph implements DotEntity {
 
 	@Override
 	public String declaration() {
-		return "subgraph " + reference() + " " + createDotString();
+		return "subgraph cluster_" + reference() + " " + createDotString();
 	}
 
 	public enum EdgeStyle {

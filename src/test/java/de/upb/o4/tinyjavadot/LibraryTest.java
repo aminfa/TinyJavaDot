@@ -8,11 +8,12 @@ public class LibraryTest {
 
         DotNode n1 = new DotNode("abc");
 
-        DotNode.setDefaultShape(DotNode.Shape.diamond);
 
         DotNode n2 = new DotNode("def");
 
         DotNode n3 = new DotNode("def");
+
+        DotNode.setDefaultShape(DotNode.Shape.diamond);
 
         g.addNode(n1);
         g.addNode(n2);
@@ -22,7 +23,6 @@ public class LibraryTest {
         g.connect(n3, n1);
 
         g.connectStyle(n1, n3, DotGraph.EdgeStyle.dotted);
-
 
         DotGraph g2 = new DotGraph();
         DotNode n11 = new DotNode("abc");
@@ -42,7 +42,26 @@ public class LibraryTest {
 
         g.addGraph(g2);
 
+
+        DotGraph g3 = new DotGraph();
+        DotNode n12 = new DotNode("abc");
+
+
+        DotNode n22 = new DotNode("def");
+
+        DotNode n32 = new DotNode("def");
+
+
+        g3.addNode(n12);
+        g3.addNode(n22);
+        g3.addNode(n32);
+        g3.connect(n12, n2);
+        g3.connect(n22, n3);
+        g3.connect(n32, n1);
+
+        g.addGraph(g3);
+
         System.out.println(g.toDot());
-        System.out.println(g2.toDot());
+//        System.out.println(g3.toDot());
     }
 }
