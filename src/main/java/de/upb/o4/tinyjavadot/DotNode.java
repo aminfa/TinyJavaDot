@@ -59,7 +59,7 @@ public final class DotNode implements DotEntity {
 	}
 
 	public static enum Shape {
-		diamond, box, ellipse, oval, circle, none, plain
+		diamond, box, ellipse, oval, circle, none, plain, rectangle
 	}
 
 	@Override

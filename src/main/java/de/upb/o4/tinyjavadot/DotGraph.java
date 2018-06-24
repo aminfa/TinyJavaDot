@@ -10,6 +10,10 @@ public class DotGraph implements DotEntity {
 	Set<Edge> kanten = new HashSet<>();
 
 	public String toDot() {
+		return "digraph" + createDotString();
+	}
+
+	private String createDotString() {
 		String dot = "{\n\t";
 		for (DotEntity entity : entities) {
 			dot += entity.declaration().replaceAll("\n", "\n\t") + "\n\t";
@@ -48,7 +52,7 @@ public class DotGraph implements DotEntity {
 
 	@Override
 	public String declaration() {
-		return "subgraph " + reference() + " " + toDot();
+		return "subgraph " + reference() + " " + createDotString();
 	}
 
 	public enum EdgeStyle {
