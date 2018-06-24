@@ -21,7 +21,7 @@ public final class DotNode implements DotEntity {
 		globalId = globalId == Long.MAX_VALUE ? 0 : globalId+1;
 	}
 
-	DotNode(String label_) {
+	public DotNode(String label_) {
 		label = label_;
 	}
 

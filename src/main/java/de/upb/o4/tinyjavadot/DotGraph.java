@@ -3,6 +3,7 @@ package de.upb.o4.tinyjavadot;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Function;
 
 public class DotGraph implements DotEntity {
 	Set<DotEntity> entities = new HashSet<>();
@@ -50,7 +51,7 @@ public class DotGraph implements DotEntity {
 		return "subgraph " + reference() + " " + toDot();
 	}
 
-	static enum EdgeStyle {
+	public enum EdgeStyle {
 		dashed,
 		dotted,
 		solid,
